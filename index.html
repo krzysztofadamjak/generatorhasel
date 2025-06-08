@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background-color: #000;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -19,10 +19,10 @@
     }
 
     .container {
-      background: #ffffff10;
+      background: #111;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
       text-align: center;
       max-width: 400px;
       width: 100%;
@@ -32,7 +32,7 @@
       margin-bottom: 20px;
     }
 
-    select, button {
+    input, button {
       padding: 10px;
       margin: 10px 0;
       border-radius: 8px;
@@ -40,20 +40,26 @@
       font-size: 16px;
     }
 
+    input {
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+    }
+
     button {
-      background-color: #00bcd4;
-      color: white;
+      background-color: #fff;
+      color: #000;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
     button:hover {
-      background-color: #0097a7;
+      background-color: #ccc;
     }
 
     .output {
       margin-top: 20px;
-      background: #00000030;
+      background: #222;
       padding: 15px;
       border-radius: 10px;
       word-break: break-all;
@@ -65,12 +71,7 @@
   <div class="container">
     <h1>Generator losowego hasła</h1>
     <label for="length">Długość hasła:</label><br>
-    <select id="length">
-      <option value="8">8 znaków</option>
-      <option value="12">12 znaków</option>
-      <option value="16">16 znaków</option>
-      <option value="20">20 znaków</option>
-    </select><br>
+    <input type="number" id="length" min="1" max="100" value="12"><br>
     <button onclick="generatePassword()">Wygeneruj hasło</button>
     <div class="output" id="output">Twoje hasło pojawi się tutaj</div>
   </div>
